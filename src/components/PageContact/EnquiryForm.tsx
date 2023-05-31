@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
+
 import { ButtonAnimated } from '../ButtonAnimated'
 import { InputDropdown } from '../InputDropdown'
 import { InputField } from '../InputField'
@@ -106,16 +106,8 @@ const EnquiryForm = () => {
 
   const isMediaTopic = topic === TOPIC_TYPES.media
 
-  useEffect(() => {
-    if (submitStatus.isSuccess) {
-      document.querySelector('#form-div')?.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  }, [submitStatus.isSuccess])
-
   return (
-    <div className="group/bg relative overflow-hidden py-4 md:py-[130px]">
+    <div className="group/bg relative overflow-hidden py-12 md:py-[150px]">
       <div className="easeInOutSine absolute inset-0 h-full w-full scale-105 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image
           src="/images/asset-management/bg-introduction.png"
@@ -124,7 +116,7 @@ const EnquiryForm = () => {
           className="object-cover"
         />
       </div>
-      <div id="form-div" className="arta-container relative z-1 mx-auto py-20">
+      <div className="arta-container relative z-1 mx-auto py-12">
         <h2 className={`${textClass.h2_style2} mb-8`}>{r.title}</h2>
         {submitStatus.isSuccess ? (
           <div className="min-h-[220px] w-full max-w-[820px] flex-col gap-10 bg-arta-snow-100 p-6 shadow-2xl">
@@ -136,42 +128,42 @@ const EnquiryForm = () => {
             <fieldset
               disabled={submitStatus.isLoading}
               className={
-                'flex w-full max-w-[820px] flex-col bg-arta-snow-100 p-6 shadow-2xl transition-all ease-in-out md:pr-0 md:grid md:grid-cols-2' +
+                'flex w-full max-w-[820px] flex-col gap-10 bg-arta-snow-100 p-6 shadow-2xl transition-all ease-in-out md:grid md:grid-cols-2' +
                 (isExpanded ? ' md:max-h-[1000px]' : ' md:max-h-[200px]')
               }
             >
-              <InputField label={r.question_topic} className="md:mr-10">
+              <InputField label={r.question_topic}>
                 <InputDropdown options={topicOptions} {...register('topic')} />
               </InputField>
               {isExpanded && (
                 <>
                   <div />
-                  <InputField label={r.question_name} error={errors.name?.message} className="mt-10 md:mr-10">
+                  <InputField label={r.question_name} error={errors.name?.message}>
                     <InputText {...register('name')} />
                   </InputField>
                   {isMediaTopic && (
                     <>
                       <div />
-                      <InputField label={r.question_company} error={errors.company?.message} className="mt-10 md:mr-10">
+                      <InputField label={r.question_company} error={errors.company?.message}>
                         <InputText {...register('company')} />
                       </InputField>
-                      <InputField label={r.question_jobTitle} error={errors.jobTitle?.message} className="mt-10 md:mr-10">
+                      <InputField label={r.question_jobTitle} error={errors.jobTitle?.message}>
                         <InputText {...register('jobTitle')} />
                       </InputField>
                     </>
                   )}
-                  <InputField label={r.question_email} error={errors.email?.message} className="mt-10 md:mr-10">
+                  <InputField label={r.question_email} error={errors.email?.message}>
                     <InputText {...register('email')} />
                   </InputField>
                   {isMediaTopic && (
-                    <InputField label={r.question_phone} error={errors.phone?.message} className="mt-10 md:mr-10">
+                    <InputField label={r.question_phone} error={errors.phone?.message}>
                       <InputText {...register('phone')} />
                     </InputField>
                   )}
                   <InputField
                     label={r.question_message}
                     error={errors.message?.message}
-                    className="col-span-2 mt-10 md:mr-10"
+                    className="col-span-2"
                   >
                     <InputTextArea {...register('message')} />
                     <span
@@ -180,7 +172,7 @@ const EnquiryForm = () => {
                       {r.question_message_hints}
                     </span>
                   </InputField>
-                  <div className="col-span-2 mt-10">
+                  <div className="col-span-2">
                     <ButtonAnimated
                       extraProps={{ type: 'submit' }}
                       className="w-full border-arta-sand-100 text-arta-sand-100 md:w-[120px]"

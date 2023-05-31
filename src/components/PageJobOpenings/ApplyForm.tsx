@@ -121,7 +121,7 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
           <InputText {...register('jobTitle')} defaultValue={job.job_title} />
         </div>
         <h2 className={`${textClass.h2_style2} mb-8`}>{t('join_us.application_form')}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-6">
           <div className="col-span-1">
             <InputField label={`${t('join_us.first_name')}*`} error={errors.firstName?.message}>
               <InputText {...register('firstName')} placeholder="Tai Man" />
@@ -216,9 +216,9 @@ const ApplyForm = (props: { job: jobDetailsT; setShowSuccess: (isSuccess: boolea
 
           <div className="col-span-full">
             <InputField label="" error={errors.acceptedTerms?.message}>
-              <label className="flex items-center">
+              <label className="flex gap-5 items-center">
                 <input type="checkbox" {...register('acceptedTerms')} />
-                <p className={`${textClass.body_regular} select-none w-[90%] sm:w-auto ml-5`}>
+                <p className={`${textClass.body_regular} select-none w-[90%] sm:w-auto`}>
                   {parse(t("join_us.accept_privacy_policy"))}
                 </p>
               </label>

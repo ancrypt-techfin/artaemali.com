@@ -57,9 +57,9 @@ const PageResultAnnouncements: NextPage = () => {
   return (
     <div className="pt-16">
       <Link href={links.investor}>
-        <p className={`${textClass.body_regular} mb-12 flex`}>
+        <p className={`${textClass.body_regular} mb-12 flex gap-4`}>
           <svg
-            className="mt-[6px] mr-4"
+            className="mt-[6px]"
             width="8"
             height="14"
             viewBox="0 0 8 14"

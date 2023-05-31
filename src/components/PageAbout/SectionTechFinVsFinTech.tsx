@@ -8,9 +8,8 @@ export const SectionTechFinVsFinTech = (props: { k: PageAboutCmsT }) => {
 
   return (
     <div
-      className={`group/bg relative overflow-hidden md:pb-[150px]`}
+      className={`group/bg relative overflow-hidden bg-[#DFD8CA] bg-[url('/images/compare_bg_mobile.png')] bg-cover bg-fixed md:pb-[150px] lg:bg-[url('/images/compare_bg.jpg')]`}
     >
-      <div className='bg-position-fix-hack' />
       <div className="arta-container px-6 md:px-12 relative mx-auto grid grid-cols-12 py-20 md:py-[150px] md:py-12">
         <div className="col-span-full mb-12 block md:hidden">
           <h2 className={`${textClass.h2_style2} mb-4`}>{t("about_us.techfin_vs_fintech")}</h2>

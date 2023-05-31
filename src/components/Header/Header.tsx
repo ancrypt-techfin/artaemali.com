@@ -182,8 +182,7 @@ const Header: React.FC<{
         ticking = false
         return
       }
-
-      setScrollDir( (scrollY >= lastScrollY && scrollY !== 0) ? 'scrolling down' : 'scrolling up')
+      setScrollDir(scrollY > lastScrollY ? 'scrolling down' : 'scrolling up')
       lastScrollY = scrollY > 0 ? scrollY : 0
       ticking = false
     }
@@ -231,19 +230,19 @@ const Header: React.FC<{
     <div
       className={cn(
         'fixed top-0 z-50 w-full opacity-100 transition-all duration-500',
-        (scrollDir == 'scrolling down') && '-top-32 opacity-0'
+        scrollDir == 'scrolling down' && '-top-32 opacity-0'
       )}
     >
       <div onMouseLeave={() => setActiveTabIndex(DEFAULT_TAB_INDEX)}>
         <header
           className={cn(
-            'mt-0 w-full px-[4em] py-[3em] transition duration-300 xl:pt-[2.6em] xl:pb-[2em] xl:mx-auto',
+            'mt-0 w-full px-[4em] py-[3em] transition duration-300 lg:pt-[2.6em] lg:pb-[2em] xl:mx-auto',
             navbarBg &&
               (textColor === 'black' ? 'bg-white' : 'bg-arta-dark-brown') + ' bg-opacity-70'
           )}
         >
-          <div className="flex w-full items-center justify-between xl:space-x-6">
-            <div className="hidden items-center justify-center space-x-8 xl:flex">
+          <div className="flex w-full items-center justify-between lg:space-x-6">
+            <div className="hidden items-center justify-center space-x-8 lg:flex">
               {pageInfoList.map((page, index) => {
                 const selected = index === activeTabIndex
                 const ChevronIcon = selected ? ChevronUpIcon : ChevronDownIcon
@@ -288,7 +287,7 @@ const Header: React.FC<{
               })}
             </div>
             <div
-              className="flex h-[22px] w-[26px] cursor-pointer flex-col justify-between xl:hidden"
+              className="flex h-[22px] w-[26px] cursor-pointer flex-col justify-between lg:hidden"
               onClick={() => setShowMenu(!showMenu)}
             >
               <span
@@ -324,8 +323,23 @@ const Header: React.FC<{
             </div>
             <div className="z-[1] text-right pr-[2px]">
               <Link title={'Arta TechFin'} href="/">
-                <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
-                  <ArtaLogo className={`${textColorClass} h-full w-full md:h-auto md:w-auto`} />
+                <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto mobile-vers">
+                  
+                <img
+                  src={`/images/${
+                    textColor == 'black' ? 'arta-logo_black' : 'ae-logo'
+                  }.png`}
+                  alt="Arta TechFin"
+                  style={{
+                    maxWidth: '100%',
+                    height: 'auto',
+                    width: '200px',
+                    maxHeight: '100%',
+                  }}
+                />
+
+
+                 {/* <ArtaLogo className={`${textColorClass} h-full w-full md:h-auto md:w-auto`} />*/}
                 </div>
               </Link>
             </div>
@@ -391,7 +405,7 @@ const Header: React.FC<{
           <div>
             {showMenu && (
               <div
-                className={`absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col ${mobileMenuBg} px-[4em] pt-[6em] xl:pt-[2.8em]`}
+                className={`absolute top-0 left-0 z-[801] flex min-h-[100vh] w-full flex-col ${mobileMenuBg} px-[4em] pt-[6em] lg:pt-[2.8em]`}
               >
                 <div className="flex items-start justify-between">
                   <div
@@ -404,14 +418,20 @@ const Header: React.FC<{
                   >
                     <XIcon className="h-6 w-6" />
                   </div>
-                  <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
+                  <div className="relative h-[32px] w-[81px] cursor-pointer opacity-100 transition hover:opacity-100 md:h-auto md:w-auto mobile-vers">
                     <Link title="Arta TechFin" href="/">
                       <img
                         src={`/images/${
-                          textColor == 'black' ? 'arta-logo_black' : 'arta-logo'
-                        }.svg`}
+                          textColor == 'black' ? 'arta-logo_black' : 'ae-logo'
+                        }.png`}
                         alt="Arta TechFin"
                         className="object-contain"
+                        style={{
+                          maxWidth: '100%',
+                          height: 'auto',
+                          width: '200px',
+                          maxHeight: '100%',
+                        }}
                       />
                     </Link>
                   </div>

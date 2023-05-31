@@ -133,16 +133,16 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
   }
 
   const fromSec0ToSec1 = () => {
-    const isTablet = windowWidth < 1024
+    const isMobile = windowWidth < 768
     setCurrentSection('10')
 
     gsap.to(circleRef.current, {
       duration: 1.4,
       autoAlpha: 0.25,
-      width: isTablet ? '140em' : '38em',
-      height: isTablet ? '140em' : '38em',
-      left: isTablet ? '-30%' : '-9%',
-      top: isTablet ? '-50%' : '-60%',
+      width: isMobile ? '140em' : '38em',
+      height: isMobile ? '140em' : '38em',
+      left: isMobile ? '-30%' : '-9%',
+      top: isMobile ? '-50%' : '-60%',
       xPercent: -2,
       ease: 'slow(0.7, 0.7, false)',
     })
@@ -151,7 +151,7 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
       xPercent: 5,
       duration: 1.7,
       attr: {
-        r: isTablet ? '120em' : '45em',
+        r: isMobile ? '120em' : '45em',
       },
       ease: 'power1.out',
     })
@@ -343,19 +343,19 @@ const TechFin = ({ k, currentSectionId, setCurrentSectionById, setTriggerSection
       </div>
 
       <div className="relative flex h-full flex-col">
-        <div className="absolute bottom-[11em] z-3 transform lg:right-[4em] lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2">
+        <div className="absolute bottom-[8em] z-3 transform lg:right-[4em] lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2">
           <div
             id="sec1ContentRef"
             ref={sec1ContentRef}
             className={cn(
-              'flex h-full w-full flex-col justify-center px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right',
+              'flex h-full w-full flex-col justify-center gap-[6px] px-[6em] opacity-0 lg:items-end lg:px-0 lg:text-right',
               currentSection == '15' && '!opacity-0'
             )}
           >
-            <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform mb-6 sm:text-[5em] lg:text-[3.4em]">
+            <h1 className="font-Verah text-[6em] tracking-[0.06em] text-white will-change-transform sm:text-[5em] lg:text-[3.4em]">
               {t('about_us.what_is_techfin')}
             </h1>
-            <p className="max-w-[30em] text-left font-Neue text-[3em] text-white will-change-transform mb-6 sm:text-[1.8em] sm:text-[2.4em] lg:text-right lg:text-[1em]">
+            <p className="mb-[0.6em] max-w-[30em] text-left font-Neue text-[3em] text-white will-change-transform sm:text-[1.8em] sm:text-[2.4em] lg:text-right lg:text-[1em]">
               {k.what_is_techfin_description}
             </p>
             <ButtonAnimated as="a" href="/about-us#tech-fin" className="text-white">

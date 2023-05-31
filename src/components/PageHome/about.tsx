@@ -31,6 +31,8 @@ const About = ({ k }: any) => {
             {k.about_us_description}
           </p>
 
+          <p className="mb-[1.5em] max-w-[30em] font-Neue text-[3em] text-white sm:text-[1.8em] lg:text-[1em]">Emali is a blockchain infrastructure company. The company’s core IPs consist of cryptographic protocols embedding properties of privacy, confidentiality and authenticity into digital transactions. The solutions are deployed in identity and data applications. </p>
+
           <ButtonAnimated
             as="a"
             href="/about-us"

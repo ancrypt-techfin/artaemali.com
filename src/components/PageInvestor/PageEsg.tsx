@@ -27,7 +27,7 @@ const PageEsg: FC<{ k: any, locale: string }> = ({ k, locale }) => {
 
     if (!esgSections.length) return
 
-    // gsap.to('.arta-gradient-border-inner', { rotate: 360, duration: 3, repeat: -1 })
+    gsap.to('.arta-gradient-border-inner', { rotate: 360, duration: 3, repeat: -1 })
 
     ScrollTrigger.create({
       trigger: nav.current,

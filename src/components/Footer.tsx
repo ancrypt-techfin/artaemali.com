@@ -152,7 +152,7 @@ const Footer: FC<{
                 </div>
               </div>
               <div className="order-1 mb-4 flex items-start justify-start space-y-3 lg:order-2 lg:mb-0 lg:space-y-0">
-                <h3 className="text-left text-[32px] leading-[40px] lg:text-right lg:text-[36px] lg:leading-[45px]">
+                <h3 className="text-left text-[32px] font-bold leading-[40px] lg:text-right lg:text-[36px] lg:leading-[45px]">
                   {t('footer.tagline')}
                 </h3>
               </div>

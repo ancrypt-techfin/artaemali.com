@@ -11,6 +11,7 @@ import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
+
 export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
   const { k } = props
   const { t } = useTranslation('common')
@@ -30,12 +31,13 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
 
   return (
     <div className="group/bg relative z-1 overflow-hidden" id="leadership">
-      <div className="easeInOutSine absolute h-full w-full overflow-hidden duration-300">
+      <div className="easeInOutSine absolute h-full w-full scale-150 overflow-hidden duration-300 group-hover/bg:scale-100">
         <Image src={leadership_bg} alt="" fill className="object-cover" />
       </div>
       <div className="arta-container relative mx-auto pt-16 pb-[126px] md:py-36 md:pb-[158px]">
         <h2 className={`${textClass.h2_style2} mb-4`}>{t('about_us.leadership')}</h2>
-        <div className="arta-leadership-slide relative min-h-[140vw] xs:min-h-[90vw] sm:min-h-[68vw] md:min-h-[49vw] lg:min-h-[33vw]">
+        <br/>
+        <div className="arta-leadership-slide relative min-h-[140vw] sm:min-h-[auto]">
           {showComponent && (
             <Swiper
               loop={false}
@@ -47,7 +49,7 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
               spaceBetween={32}
               slidesPerView={1}
               breakpoints={{
-                640: {
+                576: {
                   slidesPerView: 2,
                 },
                 768: {
@@ -59,13 +61,24 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
               }}
             >
               {k.leadership.leaderList.map((leader: any, index: number) => (
-                <SwiperSlide key={index} className="flex flex-col">
-                  <div className="relative mb-4 h-0 pb-[133%] w-full overflow-hidden">
+
+              
+                <SwiperSlide key={index} className="flex flex-col" style={{ justifyContent: 'center', marginRight: '106px', marginLeft: '206px' }}>
+                <div className="relative mb-4 h-0 pb-[133%] w-full overflow-hidden">
+                    
+
+                    <img
+                      src="/images/2.png"
+                      alt=""
+                      className="absolute h-full w-full object-cover"
+                    />
+
                     <img
                       src={leader.attributes.profile_image.data.attributes.url}
                       alt=""
                       className="absolute h-full w-full object-cover"
                     />
+
                   </div>
                   <span className={`${textClass.small_text}`}>{g(leader, 'title')}</span>
                   <span className={textClass.h6}>{g(leader, 'name')}</span>
@@ -73,6 +86,9 @@ export const SectionLeadership = (props: { k: PageAboutCmsT }) => {
               ))}
             </Swiper>
           )}
+
+
+
           <button
             ref={prevRef}
             className={`slider-length-${k.leadership.leaderList.length} swiper-button absolute left-1/2 bottom-[-90px] translate-x-[-350%] lg:left-[-56px] lg:top-[37.5%] lg:bottom-[unset] lg:translate-y-[-50%] lg:translate-x-0`}

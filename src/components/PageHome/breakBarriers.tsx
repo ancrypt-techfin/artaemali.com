@@ -129,15 +129,13 @@ export const BreakBarriers = ({ currentSectionId }: any) => {
             <h1
               id="animation"
               ref={sec1TtlRef}
-              className="movable z-[200] text-left font-Verah text-[10em] leading-[1.02em] text-white will-change-transform sm:text-[7em] md:text-[5em]"
+              className="movable z-[200] text-left font-Verah text-[2em] leading-[0.82em] text-white will-change-transform sm:text-[1em] md:text-[3em]"
             >
-              BREAK
+              EMPOWERING BUSINESSES WITH THE
+
               <br />
-              BARRIERS
-              <span className="flex space-x-2">
-                <hr className=" mt-[20px] h-[4px] w-[40px] sm:mt-[0.45em] sm:w-[80px]"></hr>
-                <span className="pr-3 text-[30px] sm:text-[0.6em]">for </span> GREATNESS
-              </span>
+              TRUST OF BLOCKCHAIN TECHNOLOGY
+              
             </h1>
           )}
           {locale === 'tc' && (

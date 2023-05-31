@@ -31,9 +31,9 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
 
   useEffect(() => {
     if (year === openYear) {
-
       gsap.to(togglerIcon.current, { rotate: -180, duration: 0.7 })
       gsap.to(listWrapper.current, { height: list.current?.clientHeight, duration: 0.7 })
+  
       if (!isFirstVisit) {
         setTimeout(() => {
           if (year !== 0) {
@@ -41,13 +41,13 @@ const CalendarAccordion = ({ index, year, events, openYear, setOpenYear }: props
             window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
           }
         }, 800)
+      } else {
+        setIsFirstVisit(false)
       }
     } else {
       gsap.to(togglerIcon.current, { rotate: 0, duration: 0.7 })
       gsap.to(listWrapper.current, { height: 0, duration: 0.7 })
     }
-
-    setIsFirstVisit(false)
 
   }, [openYear])
 

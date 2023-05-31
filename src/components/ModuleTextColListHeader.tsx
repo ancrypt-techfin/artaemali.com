@@ -68,7 +68,7 @@ const ModuleTextColListHeader = ({ header, headerPosition }: propsT) => {
         )}
         ref={circle}
       >
-        <Circle className="hidden md:block mx-auto md:w-[471px] md:h-[471px] lg:w-[500px] lg:h-[500px] xl:w-[576px] xl:h-[576px]" />
+        <Circle className="hidden md:block mx-auto w-full" />
       </div>
     </div>
   )

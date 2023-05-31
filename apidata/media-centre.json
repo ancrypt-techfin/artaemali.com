@@ -2,9 +2,9 @@
   "data":{
      "id":1,
      "attributes":{
-        "description_en":"MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN MediaCentreEN ",
-        "description_tc":"MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC MediaCentreTC ",
-        "description_sc":"MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC MediaCentreSC ",
+        "description_en":" Stay up to date with the latest news, blog posts, and press releases from Arta TechFin. Our Media Centre is your hub for accessing valuable insights, industry updates, and thought-provoking content",
+        "description_tc":" Stay up to date with the latest news, blog posts, and press releases from Arta TechFin. Our Media Centre is your hub for accessing valuable insights, industry updates, and thought-provoking content",
+        "description_sc":"Stay up to date with the latest news, blog posts, and press releases from Arta TechFin. Our Media Centre is your hub for accessing valuable insights, industry updates, and thought-provoking content ",
         "createdAt":"2022-11-22T10:03:32.005Z",
         "updatedAt":"2022-11-22T10:03:32.901Z",
         "publishedAt":"2022-11-22T10:03:32.898Z"

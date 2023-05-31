@@ -32,7 +32,7 @@ const PageJobOpenings = ({ k }: { k: jobDetailsT }) => {
       <Header textColor="white" />
       <main className="flex flex-col bg-arta-page-background text-arta-sand-100">
         <SectionBanner />
-        <div id="form-div" className="bg-arta-eggshell-100 pt-12 pb-[150px]">
+        <div className="bg-arta-eggshell-100 pt-12 pb-[150px]">
           <div className="arta-container mx-auto">
             <Link
               className={`mb-4 flex cursor-pointer items-center underline ${textClass.body_regular_verah}`}

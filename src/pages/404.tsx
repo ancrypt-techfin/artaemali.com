@@ -30,7 +30,7 @@ const Disclaimer = () => {
               Please visit the Homepage or Contact us.
             </p>
 
-            <ButtonAnimated as="a" href="/" className="my-6 border-arta-sand-100 text-arta-sand-100">
+            <ButtonAnimated as="a" href="/" className="border-arta-sand-100 text-arta-sand-100">
               {'Back to Homepage'}
             </ButtonAnimated>
           </div>

@@ -11,20 +11,6 @@
 }
 
 @font-face {
-  font-family: 'Vera Humana 95';
-  font-style: normal;
-  font-weight: 600;
-  src: url('/fonts/Verahb__.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Vera Humana 95';
-  font-style: italic;
-  font-weight: 600;
-  src: url('/fonts/Verahbi__.ttf') format('truetype');
-}
-
-@font-face {
   font-family: 'Helvetica Neue';
   font-style: normal;
   font-weight: 400;

@@ -21,6 +21,17 @@ const Layout = (props: {
   return (
     <>
       <Seo title={seo.title} description={seo.description} keywords={seo.keywords} />
+      {hideMenu && (
+        <div className="arta-container absolute z-[20] text-right">
+          <Link href="/">
+            <div className="z-2 h-[32px] w-[78.67px] cursor-pointer text-right opacity-100 transition hover:opacity-100 md:h-auto md:w-auto">
+              <ArtaLogo
+                className={`ml-auto mt-8 h-full w-full text-arta-russet-100 md:h-auto md:w-auto`}
+              />
+            </div>
+          </Link>
+        </div>
+      )}
 
       {!hideMenu && <Header textColor="white" />}
       <main className="flex flex-col bg-arta-eggshell-100 pb-12 text-arta-sand-100 md:pb-[150px]">

@@ -8,15 +8,26 @@ import { getMediaCms, getMediaCmsT, getSlug } from 'src/domains/media'
 import { useTranslation } from 'next-i18next'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { locale } = context
+  const { locale } = context;
+  const cms = await getMediaCms({ lang: locale });
+
+  // Ensure that `slug` property is present for each blog post
+  const blogPosts = cms.blogPosts.map((post: any) => {
+    return {
+      ...post,
+      slug: post.slug || "", // Use an empty string as fallback if `slug` is undefined
+    };
+  });
+
+  const serializedCms = JSON.parse(JSON.stringify({ ...cms, blogPosts }));
 
   return {
     props: {
-      cms: await getMediaCms({ lang: locale }),
+      cms: serializedCms,
       ...(await serverSideTranslations(locale || 'en', ['common'])),
     },
-  }
-}
+  };
+};
 
 const PageMediaCenter = (props: { cms: getMediaCmsT }) => {
   const { cms } = props

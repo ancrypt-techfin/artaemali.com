@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Pin } from '../Svg/Icon'
 import { textClass } from '../Text'
 import ApplyForm from './ApplyForm'
@@ -28,14 +27,6 @@ const SectionJobView = ({ k }: { k: jobDetailsT }) => {
   }
 
   const g = (keyWithoutLang: string) => seniorityMap[`${keyWithoutLang}_${locale}`] || '--'
-
-  useEffect(() => {
-    if (showSuccess) {
-      document.querySelector('#form-div')?.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  }, [showSuccess])
 
   return (
     <div className="mx-auto bg-white shadow-blogPost">

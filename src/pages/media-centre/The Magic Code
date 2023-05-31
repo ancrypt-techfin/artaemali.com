@@ -1,0 +1,48 @@
+The Magic Code - For Local Usage Only - Return To Normal After Testing
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { locale } = context;
+  const cms = await getMediaCms({ lang: locale });
+
+  // Ensure that `slug` property is present for each blog post
+  const blogPosts = cms.blogPosts.map((post: any) => {
+    return {
+      ...post,
+      slug: post.slug || "", // Use an empty string as fallback if `slug` is undefined
+    };
+  });
+
+  const serializedCms = JSON.parse(JSON.stringify({ ...cms, blogPosts }));
+
+  return {
+    props: {
+      cms: serializedCms,
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
+    },
+  };
+};
+
+
+press OLD:
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { locale } = context
+
+  return {
+    props: {
+      cms: await getMediaCms({ lang: locale }),
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
+    },
+  }
+}
+
+
+Index.tsx -->media OLD:
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { locale } = context
+
+  return {
+    props: {
+      cms: await getMediaCms({ lang: locale }),
+      ...(await serverSideTranslations(locale || 'en', ['common'])),
+    },
+  }
+}

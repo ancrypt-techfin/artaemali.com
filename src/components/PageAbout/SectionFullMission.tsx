@@ -51,7 +51,7 @@ const SectionFullMission = ({
 
   return (
     <div className="relative">
-      <div ref={bannerImage} className="absolute h-full w-full overflow-hidden z-1">
+      <div ref={bannerImage} className="absolute h-full w-full overflow-hidden">
         <img
           src={simpleHeader ? '/images/bg-static.jpg' : image}
           alt={title}

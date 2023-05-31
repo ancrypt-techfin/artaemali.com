@@ -2,9 +2,9 @@
   "data":{
      "id":1,
      "attributes":{
-        "description_en":"ContactUsEN ContactUsEN ContactUsEN ContactUsEN\nContactUsEN ContactUsEN ContactUsEN ContactUsEN",
-        "description_tc":"ContactUsTC ContactUsTC ContactUsTC ContactUsTC ContactUsTC ContactUsTC ContactUsTC ContactUsTC ",
-        "description_sc":"ContactUsSC ContactUsSC ContactUsSC ContactUsSC ContactUsSC ContactUsSC ContactUsSC ContactUsSC ",
+        "description_en":"We appreciate your interest in contacting us. At our organization, we value professionalism and strive to provide the highest level of customer service. If you have any questions, suggestions, or business inquiries, we are here to assist you.",
+        "description_tc":"We appreciate your interest in contacting us. At our organization, we value professionalism and strive to provide the highest level of customer service. If you have any questions, suggestions, or business inquiries, we are here to assist you. ",
+        "description_sc":"We appreciate your interest in contacting us. At our organization, we value professionalism and strive to provide the highest level of customer service. If you have any questions, suggestions, or business inquiries, we are here to assist you. ",
         "address_en":"Units 1-2, Level 9,\nK11 ATELIER King’s Road,\n728 King’s Road, Quarry Bay, Hong Kong",
         "address_tc":"香港鰂魚涌英皇道728號\nK11 ATELIER King’s Road \n9樓1-2室",
         "address_sc":"香港鲗鱼涌英皇道728号\nK11 ATELIER King’s Road \n9楼1-2室",
